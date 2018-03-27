@@ -1,0 +1,21 @@
+body{
+    background-color: deepskyblue;
+    text-align: center;
+    font-size: 2em;
+}
+
+.ajax{
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+
+}
+
+.result{
+    margin-left: auto;
+    margin-right: auto;
+text-align: center;
+    display: block;
+}

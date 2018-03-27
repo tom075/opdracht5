@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "gethint.php?q="+str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="ajax">
+<p><b>Zoek hier de een auto merk:</b></p>
+    <br>
+    <br>
+
+<form>
+    Het merk: <input type="text" onkeyup="showHint(this.value)">
+</form>
+</div>
+<div class="result">
+<p class="links">Suggestie:<br><br> <span id="txtHint"></span></p>
+</div>
+</body>
+</html>
